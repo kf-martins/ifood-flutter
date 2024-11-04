@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:ifood/widgets/lojas.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         title: 'IFOOD',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -61,10 +64,10 @@ class _TabBarExampleState extends State<TabBarExample>
         bottom: TabBar(
           tabAlignment: TabAlignment.center,
           isScrollable: true,
-          labelPadding: EdgeInsets.all(10.0),
+          labelPadding: const EdgeInsets.all(10.0),
           dividerHeight: 0.0,
           indicatorColor: Colors.amber,
-          indicatorPadding: EdgeInsets.all(10.0),
+          indicatorPadding: const EdgeInsets.all(10.0),
           indicatorSize: TabBarIndicatorSize.tab,
           indicatorWeight: 1.0,
           // indicatorPadding: EdgeInsets.all(12.0),
@@ -116,7 +119,18 @@ class _TabBarExampleState extends State<TabBarExample>
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          Container(),
+          ListView(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Loja(nome: "McDonalds", desc: "Loja do mcdonalds", favorite: false),
+                  Loja(favorite: true,),
+                  Loja(),
+                ],
+              ),
+            ],
+          ),
           Container(),
           Container(),
           Container(),
