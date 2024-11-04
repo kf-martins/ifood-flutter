@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:ifood/widgets/lojas.dart';
 
 void main() {
@@ -51,6 +50,7 @@ class _TabBarExampleState extends State<TabBarExample>
 
   @override
   Widget build(BuildContext context) {
+    // ignore: constant_identifier_names
     const double TAB_WIDTH = 100;
 
     return Scaffold(
@@ -124,7 +124,7 @@ class _TabBarExampleState extends State<TabBarExample>
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Loja(nome: "McDonalds", desc: "Loja do mcdonalds", favorite: false),
+                  Loja(nome: "McDonalds", desc: "Loja do mcdonalds", favorite: false, icon: "mcdonalds.png",),
                   Loja(favorite: true,),
                   Loja(),
                 ],

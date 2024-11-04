@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Loja extends StatefulWidget {
   Loja(
       {super.key,
       this.favorite = false,
       this.nome = "Loja",
-      this.desc = "Descrição"});
+      this.desc = "Descrição",
+      this.icon = "noicon.png"});
 
   bool favorite;
   String nome;
   String desc;
+  String icon;
 
   @override
   State<StatefulWidget> createState() => _LojaState();
@@ -25,28 +28,43 @@ class _LojaState extends State<Loja> {
           color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(widget.nome,
-                      style: const TextStyle(decoration: null, fontSize: 16)),
-                  const Text("descrição",
-                      style: TextStyle(decoration: null, fontSize: 14))
+                  SizedBox(
+                    width: 50,
+                    child: Image.asset(
+                      widget.icon,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  Column(
+
+                    children: [
+                      Text(widget.nome,
+                          style:
+                              const TextStyle(decoration: null, fontSize: 16)),
+                      const Text("descrição",
+                          style: TextStyle(decoration: null, fontSize: 14))
+                    ],
+                  )
                 ],
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   IconButton(
-                    onPressed: () {
-                      setState(() {
-                        widget.favorite = !widget.favorite;
-                      });
+                      onPressed: () {
+                        setState(() {
+                          widget.favorite = !widget.favorite;
+                        });
                       },
-                    icon: Icon(Icons.star, color: (widget.favorite ? Colors.amber : Colors.grey),),
-                    color: (widget.favorite ? Colors.grey : Colors.amber)),
+                      icon: Icon(
+                        Icons.star,
+                        color: (widget.favorite ? Colors.amber : Colors.grey),
+                      ),
+                      color: (widget.favorite ? Colors.grey : Colors.amber)),
                 ],
               )
             ],
