@@ -7,7 +7,7 @@ class Loja extends StatefulWidget {
       this.favorite = false,
       this.nome = "Loja",
       this.desc = "Descrição",
-      this.icon = "noicon.png"});
+      this.icon = "lojas/noicon.png"});
 
   bool favorite;
   String nome;

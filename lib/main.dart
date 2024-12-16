@@ -1,7 +1,9 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:ifood/widgets/lojas.dart';
+import 'package:ifood/Forms/LoginForm.dart';
+import 'package:ifood/Pages/HomePage.dart';
+// import 'package:ifood/Pages/HomePage.old.dart';
+import 'package:ifood/Pages/MainPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,133 +12,24 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'IFOOD',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MainPage(),
+        '/login': (context) => const LoginForm(),
+        '/homePage': (context) => const HomePage(),
+      }, 
+
       debugShowCheckedModeBanner: false,
-        title: 'IFOOD',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const TabBarExample());
-  }
-}
-
-class TabBarExample extends StatefulWidget {
-  const TabBarExample({super.key});
-
-  @override
-  State<TabBarExample> createState() => _TabBarExampleState();
-}
-
-/// [AnimationController]s can be created with `vsync: this` because of
-/// [TickerProviderStateMixin].
-class _TabBarExampleState extends State<TabBarExample>
-    with TickerProviderStateMixin {
-  late final TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 5, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // ignore: constant_identifier_names
-    const double TAB_WIDTH = 100;
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text(
-            "Av. Liberdade, 855",
-            style: TextStyle(fontSize: 16.0),
-          ),
-        ),
-        bottom: TabBar(
-          tabAlignment: TabAlignment.center,
-          isScrollable: true,
-          labelPadding: const EdgeInsets.all(10.0),
-          dividerHeight: 0.0,
-          indicatorColor: Colors.amber,
-          indicatorPadding: const EdgeInsets.all(10.0),
-          indicatorSize: TabBarIndicatorSize.tab,
-          indicatorWeight: 1.0,
-          // indicatorPadding: EdgeInsets.all(12.0),
-          controller: _tabController,
-          tabs: <Widget>[
-            Tab(
-              child: Container(
-                width: TAB_WIDTH,
-                height: 20,
-                alignment: Alignment.center,
-                child: const Text("Início"),
-              ),
-            ),
-            Tab(
-              child: Container(
-                width: TAB_WIDTH,
-                height: 20,
-                alignment: Alignment.center,
-                child: const Text("Restaurantes"),
-              ),
-            ),
-            Tab(
-              child: Container(
-                width: TAB_WIDTH,
-                height: 20,
-                alignment: Alignment.center,
-                child: const Text("Comidas"),
-              ),
-            ),
-            Tab(
-              child: Container(
-                width: TAB_WIDTH,
-                height: 20,
-                alignment: Alignment.center,
-                child: const Text("Bebidas"),
-              ),
-            ),
-            Tab(
-              child: Container(
-                width: TAB_WIDTH,
-                height: 20,
-                alignment: Alignment.center,
-                child: const Text("Mercados"),
-              ),
-            ),
-          ],
-        ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: <Widget>[
-          ListView(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Loja(nome: "McDonalds", desc: "Loja do mcdonalds", favorite: false, icon: "mcdonalds.png",),
-                  Loja(favorite: true,),
-                  Loja(),
-                ],
-              ),
-            ],
-          ),
-          Container(),
-          Container(),
-          Container(),
-          Container(),
-        ],
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        useMaterial3: true,
       ),
     );
   }
 }
+
