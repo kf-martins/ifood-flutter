@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'IFOOD',
-      initialRoute: '/',
+      initialRoute: '/homePage',
       routes: {
         '/': (context) => const MainPage(),
         '/login': (context) => const LoginForm(),

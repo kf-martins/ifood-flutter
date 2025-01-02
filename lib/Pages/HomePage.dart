@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:ifood/Widgets/lojas.dart';
+import 'package:ifood/Pages/Tabs/RestaurantesTab.dart';
 
 // class HomePage extends StatelessWidget {
 //   const HomePage({super.key});
@@ -74,14 +74,7 @@ class _HomePageTabBar extends State<HomePage>
                 child: const Text("Início"),
               ),
             ),
-            Tab(
-              child: Container(
-                width: TAB_WIDTH,
-                height: 20,
-                alignment: Alignment.center,
-                child: const Text("Restaurantes"),
-              ),
-            ),
+            const RestauranteTab(),
             Tab(
               child: Container(
                 width: TAB_WIDTH,
@@ -112,19 +105,8 @@ class _HomePageTabBar extends State<HomePage>
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          ListView(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Loja(nome: "McDonalds", desc: "Loja do mcdonalds", favorite: false, icon: "lojas/mcdonalds.png",),
-                  Loja(favorite: true,),
-                  Loja(),
-                ],
-              ),
-            ],
-          ),
           Container(),
+          const RestaurantesTabView(),
           Container(),
           Container(),
           Container(),

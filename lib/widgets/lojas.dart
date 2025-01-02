@@ -24,15 +24,25 @@ class _LojaState extends State<Loja> {
     return Padding(
         padding: const EdgeInsets.all(6),
         child: Container(
+          decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border(
+                  bottom: BorderSide(
+                      color: Colors.grey[400]!,
+                      style: BorderStyle.solid,
+                      width: 1
+                      ),
+                    ),
+                  ),
           padding: const EdgeInsets.all(10),
-          color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SizedBox(
+                  Container(
+                    margin: const EdgeInsets.only(right: 10),
                     width: 50,
                     child: Image.asset(
                       widget.icon,
@@ -40,7 +50,6 @@ class _LojaState extends State<Loja> {
                     ),
                   ),
                   Column(
-
                     children: [
                       Text(widget.nome,
                           style:
