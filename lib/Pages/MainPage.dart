@@ -82,7 +82,7 @@ class MainPage extends StatelessWidget {
                                   color: Colors.red, width: 1)),
                         ),
                       ),
-                      onPressed: () => {},
+                      onPressed: () => {Navigator.pushNamed(context, '/singup')},
                       child: const Text(
                         'Criar nova conta',
                         style: TextStyle(

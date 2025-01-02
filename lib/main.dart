@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:ifood/Forms/LoginForm.dart';
+import 'package:ifood/Forms/SingupForm.dart';
 import 'package:ifood/Pages/HomePage.dart';
 // import 'package:ifood/Pages/HomePage.old.dart';
 import 'package:ifood/Pages/MainPage.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const MainPage(),
         '/login': (context) => const LoginForm(),
+        '/singup': (context) => const SingupForm(),
         '/homePage': (context) => const HomePage(),
       }, 
 
