@@ -54,8 +54,8 @@ class _LojaState extends State<Loja> {
                       Text(widget.nome,
                           style:
                               const TextStyle(decoration: null, fontSize: 16)),
-                      const Text("descrição",
-                          style: TextStyle(decoration: null, fontSize: 14))
+                      Text(widget.desc,
+                          style: const TextStyle(decoration: null, fontSize: 14))
                     ],
                   )
                 ],

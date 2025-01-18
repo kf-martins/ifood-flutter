@@ -1,16 +1,35 @@
 # ifood
 
-A new Flutter project.
+Projeto de ifood layout com flutter e firebird
 
-## Getting Started
+## Firebird download
 
-This project is a starting point for a Flutter application.
+"""bash
+flutter pub add fbdb
+"""
 
-A few resources to get you started if this is your first Flutter project:
+## Iniciar projeto
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Para inicar o projeto precisa antes inciar o database e verificar as conexões.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Criando e iniciando database
+    - Em um terminal:
+    """bash
+        isql -u 'SYSDBA' -p 'masterkey'
+    """
+    >>> Se a senha não for 'masterkey', altere para a senha correta
+    - Em outro terminal:
+    """bash
+    node ./scripts/createDb.js
+    node ./scripts/insertRestauratns.js
+    """
+    - Iniciando servidor do database:
+    """bash
+    node ./db/server.js
+    """
+
+- Iniciando flutter
+"""bash
+    flutter pub get
+    flutter run
+"""
