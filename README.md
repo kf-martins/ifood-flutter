@@ -15,7 +15,7 @@ Para inicar o projeto precisa antes inciar o database e verificar as conexões.
 - Criando e iniciando database
     - Em um terminal:
     ```bash
-        isql -u 'SYSDBA' -p 'masterkey'
+    isql -u 'SYSDBA' -p 'masterkey'
     ```
     >>> Se a senha não for 'masterkey', altere para a senha correta
     - Em outro terminal:

@@ -12,15 +12,15 @@ const options = {
 
 const restaurants = [
     { id: 1, name: 'McDonalds', desc: 'Fast food', icon: 'lojas/mcdonalds.png' },
-    { id: 2, name: 'Burger King', desc: 'Fast food', icon: 'burgerking.png' },
-    { id: 3, name: 'Subway', desc: 'Sandwiches', icon: 'subway.png' },
-    { id: 4, name: 'Pizza Hut', desc: 'Pizza', icon: 'pizzahut.png' },
-    { id: 5, name: 'KFC', desc: 'Fried chicken', icon: 'kfc.png' },
-    { id: 6, name: 'Starbucks', desc: 'Coffee', icon: 'starbucks.png' },
-    { id: 7, name: 'Dominos', desc: 'Pizza', icon: 'dominos.png' },
-    { id: 8, name: 'Taco Bell', desc: 'Mexican', icon: 'tacobell.png' },
-    { id: 9, name: 'Dunkin Donuts', desc: 'Donuts', icon: 'dunkindonuts.png' },
-    { id: 10, name: 'Chipotle', desc: 'Mexican', icon: 'chipotle.png' }
+    { id: 2, name: 'Burger King', desc: 'Fast food', icon: 'lojas/burgerking.png' },
+    { id: 3, name: 'Subway', desc: 'Sandwiches', icon: 'lojas/subway.png' },
+    { id: 4, name: 'Pizza Hut', desc: 'Pizza', icon: 'lojas/pizzahut.png' },
+    { id: 5, name: 'KFC', desc: 'Fried chicken', icon: 'lojas/kfc.png' },
+    { id: 6, name: 'Starbucks', desc: 'Coffee', icon: 'lojas/starbucks.png' },
+    { id: 7, name: 'Dominos', desc: 'Pizza', icon: 'lojas/dominos.png' },
+    { id: 8, name: 'Taco Bell', desc: 'Mexican', icon: 'lojas/tacobell.png' },
+    { id: 9, name: 'Dunkin Donuts', desc: 'Donuts', icon: 'lojas/dunkindonuts.png' },
+    { id: 10, name: 'Chipotle', desc: 'Mexican', icon: 'lojas/chipotle.png' }
 ];
 
 function insertRestaurants() {
